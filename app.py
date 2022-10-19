@@ -6,11 +6,9 @@ from importlib import reload
 from config import app_config, app_active
 config = app_config[app_active]
 
-def create_app(config_name):
+def create_app():
     app = Flask(__name__)
-    app.secret_key = config.SECRET
-    app.config.from_object(app_config[app_active])
-    app.config.from_pyfile('config.py')
+    
     user = {
         'marlon':{
         'nome': 'marlon',
@@ -89,10 +87,8 @@ def create_app(config_name):
     return app
 
 
-config = app_config[app_active]
-server = config.APP
-server = create_app(app_active)
+
+app = create_app(app_active)
 
 if __name__ == '__main__':
-    server.run(host=config.IP_HOST, port=config.PORT_HOST, debug=True)
-    reload(sys)
+    app.run()
