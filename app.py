@@ -90,8 +90,9 @@ def create_app(config_name):
 
 
 config = app_config[app_active]
-config.APP = create_app(app_active)
+server = config.APP
+server = create_app(app_active)
 
 if __name__ == '__main__':
-    config.APP.run(host=config.IP_HOST, port=config.PORT_HOST, debug=True)
+    server.run(host=config.IP_HOST, port=config.PORT_HOST, debug=True)
     reload(sys)
