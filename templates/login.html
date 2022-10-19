@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Login - Rolim Solutions</title>
+</head>
+<body background="../static/img/textura.png">
+    <div class="cabecalho">
+        <div id="logo">
+            <a href="/"><img src="../static/img/logo2.png" alt="" height="100%"></a>
+        </div>
+        <div class="slogan">
+            <h1>Desenvolvendo seus sonhos...</h1>
+        </div>
+        <nav >
+            <a href="/login"> <div class="link">Login</div></a>
+            <a href="/"> <div class="link">Contato</div></a>
+            <a href=""> <div class="link">Sobre nós</div></a>
+            <a href="/"> <div class="link">Home</div></a>
+
+        </nav>
+
+    </div>
+    <br><br><br><br>
+    <div id="corpo-form">
+        <h1>Entrar</h1>
+        <form   action="/login"   method="POST">
+            <input type="text" Placeholder="Usuario"  name="usuario" maxlength="30", value="{{usuario}}">
+            <input type="password" Placeholder="Senha" name="senha"maxlength="15">
+            <input type="submit" value="Login">
+
+        </form>
+        {% if erro != empty %}
+
+            <h1 style="color: red;">{{erro}}</h1>'
+        {% endif %}
+        <div>
+            <a href="/cadastro">Ainda não é inscrito? <strong>Cadastre-se!</strong></a>
+        </div>
+            <br>
+    </div>
+
+</body>
+</html>
